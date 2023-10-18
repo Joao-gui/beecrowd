@@ -28,15 +28,15 @@
 
 int main()
 {
-    float valor_A, valor_B, valor_C, area_TrianguloRet, area_Circulo, area_Trapezio, area_Quadrado, area_Retangulo, pi = 3.14159;
+    double valor_A, valor_B, valor_C, area_TrianguloRet, area_Circulo, area_Trapezio, area_Quadrado, area_Retangulo, pi = 3.14159;
 
     //printf("Insira 3 valores com dupla precisão:\n");
     //printf("Valor A: ");
-    scanf("%f", &valor_A);
+    scanf("%lf", &valor_A);
     //printf("Valor B: ");
-    scanf("%f", &valor_B);
+    scanf("%lf", &valor_B);
     //printf("Valor C: \n");
-    scanf("%f", &valor_C);
+    scanf("%lf", &valor_C);
 
     area_TrianguloRet = (valor_A * valor_C) / 2;
     area_Circulo = pi * pow(valor_C,2);
@@ -44,11 +44,11 @@ int main()
     area_Quadrado = pow(valor_B,2);
     area_Retangulo = valor_A * valor_B;
 
-    printf("TRIANGULO: %.3f\n", area_TrianguloRet);
-    printf("CIRCULO: %.3f\n", area_Circulo);
-    printf("TRAPEZIO: %.3f\n", area_Trapezio);
-    printf("QUADRADO: %.3f\n", area_Quadrado);
-    printf("RETANGULO: %.3f\n", area_Retangulo);
+    printf("TRIANGULO: %.3lf\n", area_TrianguloRet);
+    printf("CIRCULO: %.3lf\n", area_Circulo);
+    printf("TRAPEZIO: %.3lf\n", area_Trapezio);
+    printf("QUADRADO: %.3lf\n", area_Quadrado);
+    printf("RETANGULO: %.3lf\n", area_Retangulo);
 
     return 0;
 }
