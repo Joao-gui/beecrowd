@@ -23,29 +23,51 @@
  */
 
 #include <stdio.h>
-
-float crescente(x, y, z);
+#include <math.h>
 
 int main()
 {
-    float a, b, c, ret[3];
-    scanf("%f%f%f", &a, &b, &c);
-    ret[3] = crescente(a, b, c);
-    printf("%f", ret[1]);
-    printf("%f", ret[2]);
-    printf("%f", ret[3]);
+    double a,b,c,a2,b2,c2;
 
-
+    scanf("%lf%lf%lf", &a,&b,&c);
+    a2 = pow(a,2);
+    b2 = pow(b,2);
+    c2 = pow(c,2);
+    
+    if (a >= (b + c))
+    {
+        printf("NAO FORMA TRIANGULO\n");
+    }
+    else if (a2 == (b2 + c2))
+    {
+        printf("TRIANGULO RETANGULO\n");
+    }
+    else if (a2 > (b2 + c2))
+    {
+        printf("TRIANGULO OBTUSANGULO\n");
+    }
+    else if (a2 < (b2 + c2))
+    {
+        printf("TRIANGULO ACUTANGULO\n");
+    }
+    else if (a == b && b == c)
+    {
+        printf("TRIANGULO EQUILATERO\n");
+    }
+    else if (a == b || a == c)
+    {
+        if (b != c)
+        {
+            printf("TRIANGULO ISOSCELES\n");
+        }        
+    }
+    else if (b == a || b == c)
+    {
+        if (a != c)
+        {
+            printf("TRIANGULO ISOSCELES\n");
+        }
+    }
     return 0;
 }
 
-float crescente(x, y, z){
-    if (x > y && x > z){
-        if (y > z)
-        {
-            return (x, y, z);
-        }
-        
-    }
-    
-}
