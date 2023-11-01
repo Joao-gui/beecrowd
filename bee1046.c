@@ -20,6 +20,22 @@
 
 int main()
 {
-    int horaInicio, horaFim;
+    int horaInicio, horaFim, horaF_I, horaI_F;
+
+    scanf("%d%d", &horaInicio, &horaFim);
+    if (horaInicio < horaFim)
+    {
+        horaF_I = horaFim - horaInicio;
+        printf("O JOGO DUROU %d HORA(S)\n", horaF_I);
+    }
+    else if (horaInicio > horaFim)
+    {
+        horaI_F = (24 - horaInicio) + horaFim;
+        printf("O JOGO DUROU %d HORA(S)\n", horaI_F);
+    }
+    else if (horaInicio == horaFim)
+    {
+        printf("O JOGO DUROU 24 HORA(S)\n");
+    }
     return 0;
 }
