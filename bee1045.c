@@ -25,49 +25,25 @@
 #include <stdio.h>
 #include <math.h>
 
-int main()
-{
-    double a,b,c,a2,b2,c2;
+int main(){
+    double a,b,c;
 
-    scanf("%lf%lf%lf", &a,&b,&c);
-    a2 = pow(a,2);
-    b2 = pow(b,2);
-    c2 = pow(c,2);
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    if(a >= (b+c) || b >= (a+c) || c >= (a+b))
+         printf("NAO FORMA TRIANGULO\n");
+    else if(pow(a,2) == (pow(b,2) + pow(c,2)) || pow(b,2) == (pow(a,2) + pow(c,2)) || pow(c,2) == (pow(a,2) + pow(b,2)))
+           printf("TRIANGULO RETANGULO\n");
+    else if(pow(a,2) > (pow(b,2) + pow(c,2)) || pow(b,2) > (pow(a,2) + pow(c,2)) || pow(c,2) > (pow(a,2) + pow(b,2)))
+           printf("TRIANGULO OBTUSANGULO\n");
+    else if(pow(a,2) < (pow(b,2) + pow(c,2)) || pow(b,2) < (pow(a,2) + pow(c,2)) || pow(c,2) < (pow(a,2) + pow(b,2)))
+           printf("TRIANGULO ACUTANGULO\n");
+    if(a == b && a == c)
+            printf("TRIANGULO EQUILATERO\n");
+    if((a == b && a != c)  || (a == c && a != b) || (b == c && b != a))
+            printf("TRIANGULO ISOSCELES\n");
+
+ return 0;
     
-    if (a >= (b + c))
-    {
-        printf("NAO FORMA TRIANGULO\n");
-    }
-    else if (a2 == (b2 + c2))
-    {
-        printf("TRIANGULO RETANGULO\n");
-    }
-    else if (a2 > (b2 + c2))
-    {
-        printf("TRIANGULO OBTUSANGULO\n");
-    }
-    else if (a2 < (b2 + c2))
-    {
-        printf("TRIANGULO ACUTANGULO\n");
-    }
-    else if (a == b && b == c)
-    {
-        printf("TRIANGULO EQUILATERO\n");
-    }
-    else if (a == b || a == c)
-    {
-        if (b != c)
-        {
-            printf("TRIANGULO ISOSCELES\n");
-        }        
-    }
-    else if (b == a || b == c)
-    {
-        if (a != c)
-        {
-            printf("TRIANGULO ISOSCELES\n");
-        }
-    }
-    return 0;
 }
 
